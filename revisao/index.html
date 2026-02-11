@@ -5,7 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Revisão HTML e CSS</title>
-  <link href="css/style.css" rel="stylesheet">
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p {
+      color: red;
+    }
+
+    #nome {
+      color: blue;
+    }
+
+    .titulos {
+      color: magenta;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,14 +35,61 @@
     </nav>
   </header>
   <main>
-    <h1>Cabeçalho Nível 1</h1>
-    <h6>Cabeçalho Nível 6</h6>
+    <h1 class="titulos">Cabeçalho Nível 1</h1>
+    <h6 class="titulos">Cabeçalho Nível 6</h6>
     <p>Este é um paragráfo</p>
     <a href="www.google.com" target="_blank">Página do Google</a>
+    <ul>
+      <li>Elemento</li>
+      <li>Elemento</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Coluna1</th>
+          <th>Coluna2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Valor1</td>
+          <td>Valor2</td>
+        </tr>
+        <tr>
+          <td>Valor3</td>
+          <td>Valor4</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total: 10000</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <form action="" method="">
+      <label for="nome">Informe seu nome:</label>
+      <input type="text" id="nome" name="nome">
+
+      <label for="sexo">Informe seu sexo:</label>
+      <select id="sexo" name="sexo">
+        <option value="F">Feminino</option>
+        <option value="M">Masculino</option>
+      </select>
+
+      <label for="obs">Observação: </label>
+      <textarea id="obs" name="obs"></textarea>
+
+      <button type="submit">
+        Enviar
+      </button>
+    </form>
+
+    <footer>
+      <p>Rodapé</p>
+    </footer>
   </main>
-  <footer>
-    <p>Rodapé</p>
-  </footer>
 </body>
 
 </html>
