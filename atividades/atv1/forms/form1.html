@@ -1,25 +1,58 @@
 <div class="row">
   <div class="col mb-3">
-    <label class="label">First Name</label>
-    <input type="text" class="form-control" placeholder="First Name" aria-label="First Name"
+    <label class="label" for="firstName">First Name</label>
+    <input id="firstName" type="text" class="form-control" placeholder="First Name" aria-label="First Name"
       aria-describedby="basic-addon1">
   </div>
 
   <div class="col mb-3">
-    <label class="label">Last Name</label>
-    <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name"
+    <label class="label" for="lastName">Last Name</label>
+    <input id="lastName" type="text" class="form-control" placeholder="Last Name" aria-label="Last Name"
       aria-describedby="basic-addon1">
   </div>
 
   <div class="col mb-3">
-    <label>Last Name</label>
+    <label for="Username">Username</label>
     <div class="input-group">
       <div class="input-group-append">
         <span class="input-group-text" id="basic-addon2">@</span>
       </div>
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+      <input id="Username" type="text" class="form-control" placeholder="Username" aria-label="Username"
         aria-describedby="basic-addon2">
     </div>
   </div>
 
 </div>
+
+<div class="row">
+  <div class="col mb-3">
+    <label for="City" class="label">City</label>
+    <input id="City" type="text" class="form-control" placeholder="City" aria-label="City"
+      aria-describedby="basic-addon1">
+  </div>
+
+  <div class="col mb-3">
+    <label for="State" class="label">State</label>
+    <input id="State" type="text" class="form-control" placeholder="State" aria-label="State"
+      aria-describedby="basic-addon1">
+  </div>
+
+  <div class="col mb-3">
+    <label for="Zip" class="label">Zip</label>
+    <input id="Zip" type="text" class="form-control" placeholder="Zip" aria-label="Zip"
+      aria-describedby="basic-addon1">
+  </div>
+
+</div>
+
+<div class="row">
+  <div>
+    <input type="checkbox" id="terms" class="form-check-input">
+    <label for="terms" class="form-check-label" >Agree to terms and conditions</label>  
+  </div>
+
+  <div>
+    <button class="btn btn-primary mt-3" type="submit">Submit form</button>
+  </div>
+</div>
+
