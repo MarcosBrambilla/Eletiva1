@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exercicio 6</title>
+    <title>Exercicio 5</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,15 +12,24 @@
 
   <body>
     <div class="container py-3">
-      <h1>Exercicio 6</h1>
+      <h1>Exercicio 8</h1>
       <form method="post">
         <div class="mb-3">
-          <label for="tempGraus" class="form-label">Digite a temperatura em Graus Celsius: </label>
+          <label for="largura" class="form-label">Informe a largura do retângulo:</label>
           <input
             type="number"
-            id="tempGraus"
-            step="any"
-            name="tempGraus"
+            id="largura"
+            name="largura"
+            class="form-control"
+            required=""
+          />
+        </div>
+        <div class="mb-3">
+          <label for="altura" class="form-label">Informe a altura do retângulo:</label>
+          <input
+            type="number"
+            id="altura"
+            name="altura"
             class="form-control"
             required=""
           />
@@ -29,11 +38,12 @@
       </form>
       <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
-          $c = $_POST['tempGraus'];
+          $largura = $_POST['largura'];
+          $altura = $_POST['altura'];
 
-          $f = ($c * 1.8) + 32;
+          $area = $largura * $altura;
 
-          echo("$c º Celsius é equivalente a $f º fahreheint");
+          echo("A area do retângulo é: $area");
       }
       ?>
       <script

@@ -15,12 +15,12 @@
       <h1>Exercicio 6</h1>
       <form method="post">
         <div class="mb-3">
-          <label for="tempGraus" class="form-label">Digite a temperatura em Graus Celsius: </label>
+          <label for="tempGraus" class="form-label">Digite a temperatura em Graus Fahreheint: </label>
           <input
             type="number"
             id="tempGraus"
-            step="any"
             name="tempGraus"
+            step="any"
             class="form-control"
             required=""
           />
@@ -29,11 +29,15 @@
       </form>
       <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
-          $c = $_POST['tempGraus'];
+          $f = $_POST['tempGraus'];
 
-          $f = ($c * 1.8) + 32;
+          $c = ($f - 32) / 1.8;
 
-          echo("$c º Celsius é equivalente a $f º fahreheint");
+          // $f = ($c * 1.8) + 32;
+
+          $cFormatado = number_format($c, 2, ',', '.');
+
+          echo "$f º Fahrenheit é equivalente a $cFormatado º Celsius";
       }
       ?>
       <script
