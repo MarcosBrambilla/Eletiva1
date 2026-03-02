@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exercicio 8</title>
+    <title>Exercicio 10</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,7 +12,7 @@
 
   <body>
     <div class="container py-3">
-      <h1>Exercicio 8</h1>
+      <h1>Exercicio 10</h1>
       <form method="post">
         <div class="mb-3">
           <label for="largura" class="form-label">Informe a largura do retângulo:</label>
@@ -23,8 +23,6 @@
             class="form-control"
             required=""
           />
-        </div>
-        <div class="mb-3">
           <label for="altura" class="form-label">Informe a altura do retângulo:</label>
           <input
             type="number"
@@ -41,9 +39,9 @@
           $largura = $_POST['largura'];
           $altura = $_POST['altura'];
 
-          $area = $largura * $altura;
+          $perimetro = 2 * ($largura * $altura);
 
-          echo("A area do retângulo é: $area");
+          echo("O perimetro do retângulo é: $perimetro");
       }
       ?>
       <script

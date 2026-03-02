@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exercicio 8</title>
+    <title>Exercicio 12</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,24 +12,23 @@
 
   <body>
     <div class="container py-3">
-      <h1>Exercicio 8</h1>
+      <h1>Exercicio 12</h1>
       <form method="post">
         <div class="mb-3">
-          <label for="largura" class="form-label">Informe a largura do retângulo:</label>
+          <label for="base" class="form-label">Informe a base do calculo:</label>
           <input
             type="number"
-            id="largura"
-            name="largura"
+            id="base"
+            name="base"
             class="form-control"
             required=""
           />
-        </div>
-        <div class="mb-3">
-          <label for="altura" class="form-label">Informe a altura do retângulo:</label>
+
+          <label for="expoente" class="form-label">Informe o expoente do calculo:</label>
           <input
             type="number"
-            id="altura"
-            name="altura"
+            id="expoente"
+            name="expoente"
             class="form-control"
             required=""
           />
@@ -38,12 +37,12 @@
       </form>
       <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
-          $largura = $_POST['largura'];
-          $altura = $_POST['altura'];
+          $base = $_POST['base'];
+          $expoente = $_POST['expoente'];
 
-          $area = $largura * $altura;
+          $resultado = $base ** $expoente;
 
-          echo("A area do retângulo é: $area");
+          echo("O resultado do cálculo é: $resultado");
       }
       ?>
       <script
