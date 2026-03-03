@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exercicio 15</title>
+    <title>Exercicio 16</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,23 +12,23 @@
 
   <body>
     <div class="container py-3">
-      <h1>Exercicio 15</h1>
+      <h1>Exercicio 16</h1>
       <form method="post">
         <div class="mb-3">
-          <label for="peso" class="form-label">Informe a peso da pessoa em KG:</label>
+          <label for="preco" class="form-label">Informe a preco do produto:</label>
           <input
             type="number"
-            id="peso"
-            name="peso"
+            id="preco"
+            name="preco"
             class="form-control"
             required=""
             step="Any"
           />
-          <label for="altura" class="form-label">Informe a altura da pessoa em metros:</label>
+          <label for="percentual" class="form-label">Informe a percentual do desconto do produto em %:</label>
           <input
             type="number"
-            id="altura"
-            name="altura"
+            id="percentual"
+            name="percentual"
             class="form-control"
             required=""
             step="Any"
@@ -38,12 +38,12 @@
       </form>
       <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
-          $peso = $_POST['peso'];
-          $altura = $_POST['altura'];
+          $preco = $_POST['preco'];
+          $percentual = $_POST['percentual'];
 
-          $imc = $peso / ($altura ** 2);
+          $novoValor = $preco * (1 - ($percentual / 100));
 
-          echo("O imc da pessoa é: $imc");
+          echo("O novo valor do produto é: $novoValor");
       }
       ?>
       <script

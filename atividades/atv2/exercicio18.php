@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Exercicio 15</title>
+    <title>Exercicio 18</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,23 +12,32 @@
 
   <body>
     <div class="container py-3">
-      <h1>Exercicio 15</h1>
+      <h1>Exercicio 18</h1>
       <form method="post">
         <div class="mb-3">
-          <label for="peso" class="form-label">Informe a peso da pessoa em KG:</label>
+          <label for="capital" class="form-label">Informe a capital:</label>
           <input
             type="number"
-            id="peso"
-            name="peso"
+            id="capital"
+            name="capital"
             class="form-control"
             required=""
             step="Any"
           />
-          <label for="altura" class="form-label">Informe a altura da pessoa em metros:</label>
+          <label for="taxaJuros" class="form-label">Informe a taxa de juros:</label>
           <input
             type="number"
-            id="altura"
-            name="altura"
+            id="taxaJuros"
+            name="taxaJuros"
+            class="form-control"
+            required=""
+            step="Any"
+          />
+          <label for="periodo" class="form-label">Informe o periodo:</label>
+          <input
+            type="number"
+            id="periodo"
+            name="periodo"
             class="form-control"
             required=""
             step="Any"
@@ -38,12 +47,14 @@
       </form>
       <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
-          $peso = $_POST['peso'];
-          $altura = $_POST['altura'];
+          $capital = $_POST['capital'];
+          $taxaJuros = $_POST['taxaJuros'];
+          $periodo = $_POST['periodo'];
 
-          $imc = $peso / ($altura ** 2);
+          $taxaDecimal = $taxaJuros / 100;
+          $juros = $capital * (1 + $taxaDecimal) ** $periodo;
 
-          echo("O imc da pessoa é: $imc");
+          echo("O resultado é: $juros");
       }
       ?>
       <script
