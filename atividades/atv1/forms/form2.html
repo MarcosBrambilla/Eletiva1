@@ -1,55 +1,168 @@
 <div class="row">
-
   <div class="col mb-3">
     <label class="label" for="codigo">Código</label>
-    <input id="codigo" type="number" value="32" disabled class="form-control" placeholder="32" aria-label="First Name"
-      aria-describedby="basic-addon1">
+    <input
+      id="codigo"
+      type="number"
+      value="32"
+      disabled
+      class="form-control"
+      placeholder="32"
+      aria-label="First Name"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
   <div class="col mb-3">
     <label for="nome" class="label">Nome</label>
-    <input id="nome" type="text" class="form-control" placeholder="Nome completo do cliente" aria-label="First Name"
-      aria-describedby="basic-addon1">
+    <input
+      id="nome"
+      type="text"
+      class="form-control"
+      placeholder="Nome completo do cliente"
+      aria-label="First Name"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
   <div class="col mb-3">
     <label for="email" class="label">Last Name</label>
-    <input id="email" type="email" class="form-control" placeholder="cliente@dominio.com" aria-label="Last Name"
-      aria-describedby="basic-addon1">
+    <input
+      id="email"
+      type="email"
+      class="form-control"
+      placeholder="cliente@dominio.com"
+      aria-label="Last Name"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
   <div class="col mb-3">
     <label for="cpf" class="label">CPF</label>
-    <input id="cpf" type="number" class="form-control" placeholder="Só números" aria-label="Last Name"
-      aria-describedby="basic-addon1">
+    <input
+      id="cpf"
+      type="number"
+      class="form-control"
+      placeholder="Só números"
+      aria-label="cpf"
+      aria-describedby="basic-addon1"
+    />
   </div>
-
 </div>
 
 <div class="row">
-
-  <div class="col mb-3">
-    <label class="label" for="codigo">Código</label>
-    <input id="codigo" type="number" value="32" disabled class="form-control" placeholder="32" aria-label="First Name"
-      aria-describedby="basic-addon1">
+  <div class="col">
+    <label for="celular" class="label">Nº Celular</label>
+    <input
+      id="celular"
+      type="number"
+      class="form-control"
+      placeholder="Nº Celular"
+      aria-label="celular"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
-  <div class="col mb-3">
-    <label for="nome" class="label">Nome</label>
-    <input id="nome" type="text" class="form-control" placeholder="Nome completo do cliente" aria-label="First Name"
-      aria-describedby="basic-addon1">
+  <div class="col">
+    <label for="telefone" class="label">Nº Telefone Fixo</label>
+    <input
+      id="telefone"
+      type="number"
+      class="form-control"
+      placeholder="Nº telefone"
+      aria-label="telefone"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
-  <div class="col mb-3">
-    <label for="email" class="label">Last Name</label>
-    <input id="email" type="email" class="form-control" placeholder="cliente@dominio.com" aria-label="Last Name"
-      aria-describedby="basic-addon1">
+  <div class="col">
+    <label for="cep" class="label">CEP</label>
+    <input
+      id="cep"
+      type="number"
+      class="form-control"
+      placeholder="EX: 19916799"
+      aria-label="cep"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
-  <div class="col mb-3">
-    <label for="cpf" class="label">CPF</label>
-    <input id="cpf" type="number" class="form-control" placeholder="Só números" aria-label="Last Name"
-      aria-describedby="basic-addon1">
+  <div class="col">
+    <label for="numero" class="label">Nº</label>
+    <input
+      id="numero"
+      type="number"
+      class="form-control"
+      placeholder="Nº"
+      aria-label="numero"
+      aria-describedby="basic-addon1"
+    />
   </div>
 
+  <div class="col">
+    <label for="bairro" class="label">Bairro</label>
+    <input
+      id="bairro"
+      type="text"
+      class="form-control"
+      placeholder="Bairro"
+      aria-label="Bairro"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <label for="cidade" class="label">Cidade</label>
+    <input
+      id="cidade"
+      type="text"
+      class="form-control"
+      placeholder="cidade"
+      aria-label="cidade"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+
+  <div class="col-1">
+    <label for="UF" class="label">UF</label>
+    <input
+      id="UF"
+      type="text"
+      class="form-control"
+      placeholder="UF"
+      aria-label="UF"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+
+  <div class="col-3">
+    <label for="Status" class="form-label">Status</label>
+    <select id="Status" class="form-select" aria-label="Status">
+      <option value="">Selecione</option>
+      <option value="ativo">Ativo</option>
+      <option value="inativo">Inativo</option>
+    </select>
+  </div>
+
+  <div class="row justify-content-end mt-3">
+    <div class="col-auto">
+      <button
+        class="btn me-2"
+        type="reset"
+        style="background-color: #2ec4c7; color: #000; border: none"
+      >
+        Resetar
+      </button>
+
+      <button
+        class="btn"
+        type="submit"
+        style="background-color: #d96bb3; color: #000; border: none"
+      >
+        Próximo
+      </button>
+    </div>
+  </div>
 </div>

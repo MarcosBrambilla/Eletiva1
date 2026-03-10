@@ -1,0 +1,92 @@
+<form>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">First name</label>
+      <input type="text" id="firstName" class="form-control" />
+    </div>
+
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Last name</label>
+      <input type="text" id="lastName" class="form-control" />
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <div class="input-group">
+      <span class="input-group-text">@</span>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        placeholder="Username"
+      />
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label"
+      >Email <span class="text-muted">(Optional)</span></label
+    >
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      placeholder="you@example.com"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="address" class="form-label">Address</label>
+    <input
+      type="text"
+      id="address"
+      class="form-control"
+      placeholder="1234 Main St"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="address2" class="form-label"
+      >Address 2 <span class="text-muted">(Optional)</span></label
+    >
+    <input
+      type="text"
+      id="address2"
+      class="form-control"
+      placeholder="Apartment or suite"
+    />
+  </div>
+
+  <div class="row">
+    <div class="col-md-5 mb-3">
+      <label for="country" class="form-label">Country</label>
+      <select id="country" class="form-select">
+        <option selected>Choose...</option>
+        <option>Brazil</option>
+        <option>USA</option>
+        <option>Portugal</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="state" class="form-label">State</label>
+      <select id="state" class="form-select">
+        <option selected>Choose...</option>
+        <option>SP</option>
+        <option>RJ</option>
+        <option>MG</option>
+      </select>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <label for="zip" class="form-label">Zip</label>
+      <input type="text" id="zip" class="form-control" />
+    </div>
+  </div>
+
+  <div class="text-end mt-3">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+  </div>
+</form>
