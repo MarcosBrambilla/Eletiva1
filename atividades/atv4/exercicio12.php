@@ -18,7 +18,8 @@
         
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $senhaGerada = bin2hex(random_bytes(4));
+            $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $senhaGerada = substr(str_shuffle($caracteres), 0, 8);
 
             echo "<p>Sua nova senha é: $senhaGerada</p>";
         }
