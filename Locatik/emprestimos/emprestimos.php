@@ -7,7 +7,7 @@ try {
         FROM emprestimo e
         INNER JOIN equipamento eq ON eq.id = e.equipamento_id
         INNER JOIN funcionario f ON f.id = e.funcionario_id
-        INNER JOIN setor s ON s.id = e.setor_id');
+        INNER JOIN setor s ON s.id = f.setor_id');
     $resultado = $stmt->fetchAll();
 } catch (Exception $e) {
     echo "Erro: " . $e->getMessage();

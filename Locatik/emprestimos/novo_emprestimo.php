@@ -5,7 +5,6 @@ require_once($raiz . 'includes/conexao.php');
 try {
     $equipamentos = $pdo->query("SELECT * FROM equipamento")->fetchAll();
     $funcionarios = $pdo->query("SELECT * FROM funcionario")->fetchAll();
-    $setores = $pdo->query("SELECT * FROM setor")->fetchAll();
 } catch (Exception $e) {
     die("Erro: " . $e->getMessage());
 }
@@ -26,15 +25,8 @@ try {
             <div class="form-group">
                   <label for="funcionario">Selecione o funcionário</label>
                   <select required name="funcionario" id="funcionario">
+                      <option value="">Selecione o funcionário</option>
                   <?php foreach ($funcionarios as $r) : ?>
-                      <option value="<?= $r['id']?>"> <?= $r['nome']?></option>
-                  <?php endforeach;?>
-                  </select>
-            </div>
-            <div class="form-group">
-                  <label for="setor">Selecione o setor</label>
-                  <select required name="setor" id="setor">
-                  <?php foreach ($setores as $r) : ?>
                       <option value="<?= $r['id']?>"> <?= $r['nome']?></option>
                   <?php endforeach;?>
                   </select>
@@ -57,12 +49,11 @@ try {
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $equipamento = $_POST['equipamento'];
           $funcionario = $_POST['funcionario'];
-          $setor = $_POST['setor'];
           $data_emprestimo = $_POST['data_emprestimo'];
           $data_devolucao = $_POST['data_devolucao'] ?: null;
           try {
-              $stmt = $pdo->prepare('INSERT INTO emprestimo (equipamento_id, funcionario_id, setor_id, data_emprestimo, data_devolucao) VALUES (?, ?, ?, ?, ?);');
-              if ($stmt->execute([$equipamento, $funcionario, $setor, $data_emprestimo, $data_devolucao])) {
+              $stmt = $pdo->prepare('INSERT INTO emprestimo (equipamento_id, funcionario_id, data_emprestimo, data_devolucao) VALUES (?, ?, ?, ?);');
+              if ($stmt->execute([$equipamento, $funcionario, $data_emprestimo, $data_devolucao])) {
                   echo "<p>Cadastro realizado!</p>";
               } else {
                   echo "<p>Erro ao cadastrar! Tente novamente</p>";

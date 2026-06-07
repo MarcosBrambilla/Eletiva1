@@ -1,4 +1,5 @@
 <?php
+
 $raiz = '../';
 require_once($raiz . 'includes/cabecalho.php');
 require_once($raiz . 'includes/conexao.php');
@@ -8,7 +9,7 @@ try {
    FROM emprestimo e
    INNER JOIN equipamento eq ON eq.id = e.equipamento_id
    INNER JOIN funcionario f ON f.id = e.funcionario_id
-   INNER JOIN setor s ON s.id = e.setor_id
+   INNER JOIN setor s ON s.id = f.setor_id
     WHERE e.id=?');
     $stmt->execute([$_GET['id']]);
     $resultado = $stmt->fetch();
@@ -49,6 +50,7 @@ try {
             </div>
             <div style="margin-top: 10px;">
                 <a href="excluir_emprestimo.php?id=<?= $resultado['id'] ?>" class="btn">Excluir</a>
+                <a href="emprestimos.php" class="btn">Voltar</a>
             </div>
         </fieldset>
 

@@ -1,4 +1,5 @@
 <?php
+
 $raiz = '../';
 require_once($raiz . 'includes/cabecalho.php');
 require_once($raiz . 'includes/conexao.php');

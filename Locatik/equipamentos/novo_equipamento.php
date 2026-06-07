@@ -1,6 +1,6 @@
 <?php
-    $raiz = '../';
-    require_once($raiz . 'includes/cabecalho.php');
+$raiz = '../';
+require_once($raiz . 'includes/cabecalho.php');
 ?>
 
 <h1>Novo Equipamento</h1>
@@ -22,22 +22,22 @@
         </fieldset>
     </form>
     <?php
-      if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        require_once($raiz . 'includes/conexao.php');
-        $descricao = $_POST['descricao'];
-        $patrimonio = $_POST['patrimonio'];
-        try{
-          $stmt = $pdo->prepare('INSERT INTO equipamento (descricao, patrimonio) VALUES (?, ?);');
-          if($stmt->execute([$descricao, $patrimonio])){
-            echo "<p>Cadastro realizado!</p>";
-          } else {
-            echo "<p>Erro ao cadastrar! Tente novamente</p>";
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          require_once($raiz . 'includes/conexao.php');
+          $descricao = $_POST['descricao'];
+          $patrimonio = $_POST['patrimonio'];
+          try {
+              $stmt = $pdo->prepare('INSERT INTO equipamento (descricao, patrimonio) VALUES (?, ?);');
+              if ($stmt->execute([$descricao, $patrimonio])) {
+                  echo "<p>Cadastro realizado!</p>";
+              } else {
+                  echo "<p>Erro ao cadastrar! Tente novamente</p>";
+              }
+          } catch (Exception $e) {
+              echo "Erro: " . $e->getMessage();
           }
-        } catch(Exception $e){
-          echo "Erro: ".$e->getMessage();
-        }
       }
-    ?>
+?>
 
 <?php
-    require_once($raiz . 'includes/rodape.php');
+require_once($raiz . 'includes/rodape.php');

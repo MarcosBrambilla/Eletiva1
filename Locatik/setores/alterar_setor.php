@@ -1,31 +1,32 @@
 <?php
-    $raiz = '../';
-    require_once($raiz . 'includes/cabecalho.php');
-    require_once($raiz . 'includes/conexao.php');
-    $mensagem = "";
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $nome = $_POST['nome'];
-        $id = $_GET['id'];
-        try{
-          $sql = "UPDATE setor SET nome = ? WHERE id = ?";
-          $stmt = $pdo->prepare($sql);
-          if($stmt->execute([$nome, $id])){
+
+$raiz = '../';
+require_once($raiz . 'includes/cabecalho.php');
+require_once($raiz . 'includes/conexao.php');
+$mensagem = "";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'];
+    $id = $_GET['id'];
+    try {
+        $sql = "UPDATE setor SET nome = ? WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        if ($stmt->execute([$nome, $id])) {
             $mensagem = "<p>Alteração realizada!</p>";
-          } else {
+        } else {
             $mensagem = "<p>Erro ao alterar! Tente novamente</p>";
-          }
-        } catch(Exception $e){
-          echo "Erro: ".$e->getMessage();
         }
-      }
-    try{
-        $stmt =
-            $pdo->prepare("SELECT * from setor WHERE id = ?");
-        $stmt->execute([$_GET['id']]);
-        $resultado = $stmt->fetch();
-    } catch (Exception $e){
-        echo "Erro: ".$e->getMessage();
+    } catch (Exception $e) {
+        echo "Erro: " . $e->getMessage();
     }
+}
+try {
+    $stmt
+        = $pdo->prepare("SELECT * from setor WHERE id = ?");
+    $stmt->execute([$_GET['id']]);
+    $resultado = $stmt->fetch();
+} catch (Exception $e) {
+    echo "Erro: " . $e->getMessage();
+}
 ?>
 
 <h1>Alterar Setor</h1>
@@ -45,7 +46,7 @@
     </form>
     <?php
       echo $mensagem;
-    ?>
+?>
 
 <?php
-    require_once($raiz . 'includes/rodape.php');
+require_once($raiz . 'includes/rodape.php');

@@ -29,6 +29,7 @@ try {
             </div>
             <div style="margin-top: 10px;">
                 <a href="excluir_equipamento.php?id=<?= $resultado['id'] ?>" class="btn">Excluir</a>
+                <a href="equipamentos.php" class="btn">Voltar</a>
             </div>
         </fieldset>
 

@@ -1,4 +1,5 @@
 <?php
+
 $raiz = '../';
 require_once($raiz . 'includes/cabecalho.php');
 require_once($raiz . 'includes/conexao.php');
@@ -23,6 +24,7 @@ try {
             </div>
             <div style="margin-top: 10px;">
                 <a href="excluir_setor.php?id=<?= $resultado['id'] ?>" class="btn">Excluir</a>
+                <a href="setores.php" class="btn">Voltar</a>
             </div>
         </fieldset>
 

@@ -1,4 +1,5 @@
 <?php
+
 $raiz = '../';
 require_once($raiz . 'includes/cabecalho.php');
 require_once($raiz . 'includes/conexao.php');
@@ -6,14 +7,13 @@ $mensagem = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $equipamento = $_POST['equipamento'];
     $funcionario = $_POST['funcionario'];
-    $setor = $_POST['setor'];
     $data_emprestimo = $_POST['data_emprestimo'];
     $data_devolucao = $_POST['data_devolucao'] ?: null;
     $id = $_GET['id'];
     try {
-        $sql = "UPDATE emprestimo SET equipamento_id = ?, funcionario_id = ?, setor_id = ?, data_emprestimo = ?, data_devolucao = ? WHERE id = ?";
+        $sql = "UPDATE emprestimo SET equipamento_id = ?, funcionario_id = ?, data_emprestimo = ?, data_devolucao = ? WHERE id = ?";
         $stmt = $pdo->prepare($sql);
-        if ($stmt->execute([$equipamento, $funcionario, $setor, $data_emprestimo, $data_devolucao, $id])) {
+        if ($stmt->execute([$equipamento, $funcionario, $data_emprestimo, $data_devolucao, $id])) {
             $mensagem = "<p>Alteração realizada!</p>";
         } else {
             $mensagem = "<p>Erro ao alterar! Tente novamente</p>";
@@ -28,7 +28,6 @@ try {
     $resultado = $stmt->fetch();
     $equipamentos = $pdo->query('SELECT * FROM equipamento')->fetchAll();
     $funcionarios = $pdo->query('SELECT * FROM funcionario')->fetchAll();
-    $setores = $pdo->query('SELECT * FROM setor')->fetchAll();
 } catch (Exception $e) {
     die("Erro: " . $e->getMessage());
 }
@@ -55,17 +54,7 @@ try {
         <?php foreach ($funcionarios as $r):
             $selecionado = ($resultado['funcionario_id'] == $r['id']) ? "selected" : "";
             ?>
-        <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
-      <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="setor">Selecione o setor</label>
-                <select required name="setor" id="setor">
-        <?php foreach ($setores as $r):
-            $selecionado = ($resultado['setor_id'] == $r['id']) ? "selected" : "";
-            ?>
-        <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
+        <option <?= $selecionado ?> value="<?= $r['id'] ?>" data-setor="<?= $r['setor_id'] ?>"><?= $r['nome'] ?></option>
       <?php endforeach; ?>
                 </select>
             </div>
