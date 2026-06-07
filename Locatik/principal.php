@@ -1,6 +1,6 @@
 <?php
-    $raiz = '';
-    require_once($raiz . 'includes/cabecalho.php');
+$raiz = '';
+require_once($raiz . 'includes/cabecalho.php');
 ?>
 
     <h2>Seja bem vindo <?= $_SESSION['nome'] ?></h2>

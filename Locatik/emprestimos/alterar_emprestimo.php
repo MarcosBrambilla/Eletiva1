@@ -37,45 +37,51 @@ try {
 <h1>Alterar Empréstimo</h1>
     <form method="post"
         action="alterar_emprestimo.php?id=<?= $resultado['id']?>">
-        <div class="mb-3">
-            <label for="equipamento" class="form-label">Selecione o equipamento</label>
-            <select required name="equipamento" id="equipamento" class="form-select">
-    <?php foreach ($equipamentos as $r):
-        $selecionado = ($resultado['equipamento_id'] == $r['id']) ? "selected" : "";
-        ?>
-    <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['descricao'] ?></option>
-  <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="funcionario" class="form-label">Selecione o funcionário</label>
-            <select required name="funcionario" id="funcionario" class="form-select">
-    <?php foreach ($funcionarios as $r):
-        $selecionado = ($resultado['funcionario_id'] == $r['id']) ? "selected" : "";
-        ?>
-    <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
-  <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="setor" class="form-label">Selecione o setor</label>
-            <select required name="setor" id="setor" class="form-select">
-    <?php foreach ($setores as $r):
-        $selecionado = ($resultado['setor_id'] == $r['id']) ? "selected" : "";
-        ?>
-    <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
-  <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="data_emprestimo" class="form-label">Data do empréstimo</label>
-            <input value="<?= $resultado['data_emprestimo']?>" type="date" id="data_emprestimo" name="data_emprestimo" class="form-control" required="">
-        </div>
-        <div class="mb-3">
-            <label for="data_devolucao" class="form-label">Data da devolução</label>
-            <input value="<?= $resultado['data_devolucao']?>" type="date" id="data_devolucao" name="data_devolucao" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <fieldset>
+            <legend>Informações do Empréstimo</legend>
+            <div class="form-group">
+                <label for="equipamento">Selecione o equipamento</label>
+                <select required name="equipamento" id="equipamento">
+        <?php foreach ($equipamentos as $r):
+            $selecionado = ($resultado['equipamento_id'] == $r['id']) ? "selected" : "";
+            ?>
+        <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['descricao'] ?></option>
+      <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="funcionario">Selecione o funcionário</label>
+                <select required name="funcionario" id="funcionario">
+        <?php foreach ($funcionarios as $r):
+            $selecionado = ($resultado['funcionario_id'] == $r['id']) ? "selected" : "";
+            ?>
+        <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
+      <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="setor">Selecione o setor</label>
+                <select required name="setor" id="setor">
+        <?php foreach ($setores as $r):
+            $selecionado = ($resultado['setor_id'] == $r['id']) ? "selected" : "";
+            ?>
+        <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
+      <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="data_emprestimo">Data do empréstimo</label>
+                <input value="<?= $resultado['data_emprestimo']?>" type="date" id="data_emprestimo" name="data_emprestimo" required="">
+            </div>
+            <div class="form-group">
+                <label for="data_devolucao">Data da devolução</label>
+                <input value="<?= $resultado['data_devolucao']?>" type="date" id="data_devolucao" name="data_devolucao">
+            </div>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="emprestimos.php" class="btn">Voltar</a>
+            </div>
+        </fieldset>
     </form>
     <?php
           echo $mensagem;

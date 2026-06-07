@@ -15,8 +15,8 @@ try {
 ?>
 
 <h2>Empréstimos</h2>
-    <a href="novo_emprestimo.php" class="btn btn-success mb-3">Novo Registro</a>
-    <table class="table table-hover table-striped">
+    <a href="novo_emprestimo.php" class="btn">Novo Registro</a>
+    <table>
     <thead>
         <tr>
         <th>ID</th>
@@ -37,9 +37,10 @@ try {
             <td><?= $r['setor'] ?></td>
             <td><?= $r['data_emprestimo'] ?></td>
             <td><?= $r['data_devolucao'] ?></td>
-            <td class="d-flex gap-2">
-            <a href="alterar_emprestimo.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
-            <a href="consultar_emprestimo.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-info">Consultar</a>
+            <td>
+            <a href="alterar_emprestimo.php?id=<?= $r['id'] ?>" class="btn">Editar</a>
+            <a href="consultar_emprestimo.php?id=<?= $r['id'] ?>" class="btn">Consultar</a>
+            <a href="excluir_emprestimo.php?id=<?= $r['id'] ?>" class="btn">Excluir</a>
             </td>
         </tr>
         <?php endforeach; ?>

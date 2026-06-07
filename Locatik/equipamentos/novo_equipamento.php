@@ -5,15 +5,21 @@
 
 <h1>Novo Equipamento</h1>
     <form method="post">
-        <div class="mb-3">
-              <label for="descricao" class="form-label">Informe a descrição</label>
-              <input type="text" id="descricao" name="descricao" class="form-control" required="">
-        </div>
-        <div class="mb-3">
-              <label for="patrimonio" class="form-label">Informe o nº de patrimônio</label>
-              <input type="text" id="patrimonio" name="patrimonio" class="form-control" required="">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <fieldset>
+            <legend>Dados do Equipamento</legend>
+            <div class="form-group">
+                <label for="descricao">Informe a descrição:</label>
+                <input type="text" id="descricao" name="descricao" required="">
+            </div>
+            <div class="form-group">
+                <label for="patrimonio">Informe o nº de patrimônio:</label>
+                <input type="text" id="patrimonio" name="patrimonio" required="">
+            </div>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="equipamentos.php" class="btn">Voltar</a>
+            </div>
+        </fieldset>
     </form>
     <?php
       if ($_SERVER['REQUEST_METHOD'] == 'POST'){

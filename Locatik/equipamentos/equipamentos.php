@@ -11,8 +11,8 @@ try {
 ?>
 
 <h2>Equipamentos</h2>
-    <a href="novo_equipamento.php" class="btn btn-success mb-3">Novo Registro</a>
-    <table class="table table-hover table-striped">
+    <a href="novo_equipamento.php" class="btn">Novo Registro</a>
+    <table>
     <thead>
         <tr>
         <th>ID</th>
@@ -27,9 +27,10 @@ try {
             <td><?= $r['id'] ?></td>
             <td><?= $r['descricao'] ?></td>
             <td><?= $r['patrimonio'] ?></td>
-            <td class="d-flex gap-2">
-            <a href="alterar_equipamento.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
-            <a href="consultar_equipamento.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-info">Consultar</a>
+            <td>
+            <a href="alterar_equipamento.php?id=<?= $r['id'] ?>" class="btn">Editar</a>
+            <a href="consultar_equipamento.php?id=<?= $r['id'] ?>" class="btn">Consultar</a>
+            <a href="excluir_equipamento.php?id=<?= $r['id'] ?>" class="btn">Excluir</a>
             </td>
         </tr>
         <?php endforeach; ?>

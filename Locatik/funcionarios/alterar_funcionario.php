@@ -37,25 +37,31 @@ try {
 <h1>Alterar Funcionário</h1>
     <form method="post"
         action="alterar_funcionario.php?id=<?= $resultado['id']?>">
-        <div class="mb-3">
-            <label for="nome" class="form-label">Informe o nome</label>
-            <input value="<?= $resultado['nome']?>" type="text" id="nome" name="nome" class="form-control" required="">
-        </div>
-        <div class="mb-3">
-            <label for="setor" class="form-label">Selecione o setor</label>
-            <select required name="setor" id="setor" class="form-select">
-    <?php foreach ($resultado2 as $r):
-        if ($resultado['setor_id'] == $r['id']) {
-            $selecionado = "selected";
-        } else {
-            $selecionado = "";
-        }
-        ?>
-    <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
-  <?php endforeach; ?>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <fieldset>
+            <legend>Dados do Funcionário</legend>
+            <div class="form-group">
+                <label for="nome">Informe o nome:</label>
+                <input value="<?= $resultado['nome']?>" type="text" id="nome" name="nome" required="">
+            </div>
+            <div class="form-group">
+                <label for="setor">Selecione o setor:</label>
+                <select required name="setor" id="setor">
+        <?php foreach ($resultado2 as $r):
+            if ($resultado['setor_id'] == $r['id']) {
+                $selecionado = "selected";
+            } else {
+                $selecionado = "";
+            }
+            ?>
+        <option <?= $selecionado ?> value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
+    <?php endforeach; ?>
+                </select>
+            </div>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="funcionarios.php" class="btn">Voltar</a>
+            </div>
+        </fieldset>
     </form>
     <?php
           echo $mensagem;

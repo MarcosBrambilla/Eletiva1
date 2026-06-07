@@ -31,11 +31,17 @@
 <h1>Alterar Setor</h1>
     <form method="post"
         action="alterar_setor.php?id=<?= $resultado['id']?>">
-        <div class="mb-3">
-            <label for="nome" class="form-label">Informe o nome</label>
-            <input value="<?= $resultado['nome']?>" type="text" id="nome" name="nome" class="form-control" required="">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <fieldset>
+            <legend>Dados do Setor</legend>
+            <div class="form-group">
+                <label for="nome">Informe o nome:</label>
+                <input value="<?= $resultado['nome']?>" type="text" id="nome" name="nome" required="">
+            </div>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="setores.php" class="btn">Voltar</a>
+            </div>
+        </fieldset>
     </form>
     <?php
       echo $mensagem;

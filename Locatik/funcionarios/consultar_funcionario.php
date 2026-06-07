@@ -17,33 +17,23 @@ try {
 <h1>Consultar Funcionário</h1>
     <form method="post"
         action="consultar_funcionario.php?id=<?= $resultado['id'] ?>">
-        <div class="mb-3">
-              <p><strong>Nome:</strong>
-                 <?= $resultado['nome'] ?>
-              </p>
-        </div>
-        <div class="mb-3">
-              <p><strong>Setor:</strong>
-                 <?= $resultado['setor'] ?>
-              </p>
-        </div>
-        <button type="submit" class="btn btn-danger">Excluir</button>
-    </form>
-    <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $id = $_GET['id'];
-            try {
-                $sql = "DELETE FROM funcionario WHERE id = ?";
-                $stmt = $pdo->prepare($sql);
-                if ($stmt->execute([$id])) {
-                    header('Location: funcionarios.php');
-                } else {
-                    echo "Erro ao excluir!";
-                }
-            } catch (Exception $e) {
-                echo "Erro: " . $e->getMessage();
-            }
-        }
-?>
+        <fieldset>
+            <legend>Dados do Funcionário</legend>
+            <div class="form-group">
+                <p><strong>Nome:</strong>
+                    <?= $resultado['nome'] ?>
+                </p>
+            </div>
+            <div class="form-group">
+                <p><strong>Setor:</strong>
+                    <?= $resultado['setor'] ?>
+                </p>
+            </div>
+            <div style="margin-top: 10px;">
+                <a href="excluir_funcionario.php?id=<?= $resultado['id'] ?>" class="btn">Excluir</a>
+            </div>
+        </fieldset>
+
 <?php
 require_once($raiz . 'includes/rodape.php');
+?>

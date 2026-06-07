@@ -1,10 +1,11 @@
 <?php
-    session_start();
-    $raiz = isset($raiz) ? $raiz : '';
-    if (!isset($_SESSION['acesso']) || $_SESSION['acesso'] == false){
-        header('Location: ' . $raiz . 'index.php');
-        exit();
-    }
+
+session_start();
+$raiz ??= '';
+if (!isset($_SESSION['acesso']) || $_SESSION['acesso'] == false) {
+    header('Location: ' . $raiz . 'index.php');
+    exit();
+}
 ?>
 
 <!doctype html>
@@ -13,43 +14,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Locatik - Controle de Empréstimo de Equipamentos</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?= $raiz ?>css/style.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="<?= $raiz ?>principal.php">Locatik</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="<?= $raiz ?>principal.php">Início</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Cadastros
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown2">
-                <li><a class="dropdown-item" href="<?= $raiz ?>setores/setores.php">Setores</a></li>
-                <li><a class="dropdown-item" href="<?= $raiz ?>funcionarios/funcionarios.php">Funcionários</a></li>
-                <li><a class="dropdown-item" href="<?= $raiz ?>equipamentos/equipamentos.php">Equipamentos</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Movimentação
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown3">
-                <li><a class="dropdown-item" href="<?= $raiz ?>emprestimos/emprestimos.php">Empréstimos</a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="<?= $raiz ?>logout.php">Sair</a>
-        </li>
-      </ul>
+
+<div id="wrapper">
+    <div id="header">
+        <h1>Locatik</h1>
+        <small>Controle de Empréstimo de Equipamentos</small>
     </div>
-  </div>
-</nav>
-<div class="container py-3">
+
+    <div id="nav">
+        <ul>
+            <li><a href="<?= $raiz ?>principal.php">Início</a></li>
+            <li class="dropdown">
+                <a href="#">Cadastros</a>
+                <div class="dropdown-content">
+                    <a href="<?= $raiz ?>setores/setores.php">Setores</a>
+                    <a href="<?= $raiz ?>funcionarios/funcionarios.php">Funcionários</a>
+                    <a href="<?= $raiz ?>equipamentos/equipamentos.php">Equipamentos</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Movimentação</a>
+                <div class="dropdown-content">
+                    <a href="<?= $raiz ?>emprestimos/emprestimos.php">Empréstimos</a>
+                </div>
+            </li>
+            <li><a href="<?= $raiz ?>logout.php">Sair</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
